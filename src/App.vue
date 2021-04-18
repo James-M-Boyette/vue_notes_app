@@ -1,33 +1,79 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link>
-      |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+    <Toolbar />
+    <NoteContainer />
+    
   </div>
-</template>
-
-<style>
+</template>	<script>
+import { component } from 'vue/types/umd';
+import { component } from 'vue/';
+import { component } from 'vue/';
+export default {
+  name: 'app',
+  components: {
+    Toolbar,
+    NoteContainer
+  }
+};
+</script>	<style>
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  box-sizing: border-box;
+}	/* LAYOUT */
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-#nav {
-  padding: 30px;
-}
 
-#nav a {
+}	/* COLORS */
+* {
+  color: #454545;
+  background-color: #FAFAF8;
+}
+.toolbar {
+  background-color: #DCDADC;
+}
+.toolbar-button {
+  background-color: #FFFFFF;
+}
+.toolbar-button:active {
+  background-color: #AAAAAA;
+}
+.note-selectors {
+  border-right: 1px solid #DCDADC;
+}
+.note-selector {
+  border-bottom: 1px solid #DCDADC;
+}
+.note-selector.active {
+  background-color: #FCE18D;
+}
+.note-selector-title {
+  background-color: inherit;
+}
+.note-selector-timestamp {
+  color: #626262;
+  background-color: inherit;
+}
+.note-editor-info {
+  color: #DCDADC;
+}	/* TYPOGRAPHY */
+body {
+  font-family: sans-serif;
+}
+.note-selector-title {
   font-weight: bold;
-  color: #2c3e50;
+}
+.note-selector-timestamp {
+  font-size: 0.7em;
+}
+.note-editor, .note-editor-input {
+  font-size: 0.9em;
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
